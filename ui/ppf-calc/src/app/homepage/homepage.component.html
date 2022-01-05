@@ -1,0 +1,84 @@
+<div class="container-fluid m-2 bg-light">
+    <div class="row">
+        <div class="col-sm-5 m-2">
+          <div class="card" style="height: 350px;">
+            <div class="card-body">
+              <h5 class="card-title">PPF Calculator</h5>
+              
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputdeposite1" class="form-label">Yearly Deposite</label>
+                  <input type="number" class="form-control" id="exampleInputdeposite1" min="500" max="1500000" aria-describedby="depositeHelp" name="Deposite" [(ngModel)]="parameters.deposite">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputduration1" class="form-label">Duration</label>
+                  <input type="number" class="form-control" id="exampleInputduration1" min="15" aria-describedby="durationHelp" name="Duration" [(ngModel)]="parameters.duration">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputInterest1" class="form-label">Rate Of Interest</label>
+                  <input type="text" class="form-control" value="7.1" id="exampleInputInterest1" name="Interest" [(ngModel)]="parameters.rateOfInterest">
+                </div>
+                <div class="mb-3">
+                  <button type="button" class="btn btn-sm btn-danger"  style="margin-left: 5px;" (click)="onReset()">Reset</button>
+                  <button type="submit" class="btn btn-sm btn-primary" style="margin-left: 5px;" (click)="onClick()">Get Value</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5 m-2" [hidden]="maturityValues === null">
+          <div class="card" style="height: 350px;">
+            <div class="card-body row">
+              <h5 class="card-title col-12">Result</h5>
+              <p class="card-text col-sm-5 col-5">Total Amount deposited: </p> <strong class="col-sm-5 col-5"> &#x20B9;{{maturityValues !== null? maturityValues.totalDeposit.toFixed(0):0}}</strong>
+              <p class="card-text col-sm-5 col-5">Total Interest: </p> <strong class="col-sm-5 col-5"> &#x20B9;{{maturityValues !== null? maturityValues.totalInterest.toFixed(0):0}}</strong>
+              <p class="card-text col-sm-5 col-5">Maturity Amount: </p> <strong class="col-sm-5 col-5"> &#x20B9;{{maturityValues !== null? maturityValues.maturityAmount.toFixed(0):0}}</strong>
+              <button class="btn btn-outline-dark btn-sm m-2 col-4" (click)="showInfo = showInfo? false: true">{{showInfo? "Show":"Hide"}} Detailed info</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-5 m-2" hidden >
+          <div class="card" style="height: 350px;">
+            <div class="card-body row">
+              <h5 class="card-title col-12">Result</h5>
+              <figure class="pie-chart">
+                <div>Holistic Approach</div>
+                <div class="circle-image">image</div>
+                <div>Integrated Tax Solutions</div>
+              </figure>
+              </div>
+          </div>
+        </div>
+
+          <div class="col-sm-11 m-2" [hidden]=showInfo >
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Complete Info</h5>
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Year</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Opening Amount</th>
+                      <th scope="col">Deposite Amount</th>
+                      <th scope="col">Interest Amount</th>
+                      <th scope="col">Closing Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let det of completeData;">
+                      <th scope="row">{{completeData!==null? det.year-1:0}}</th>
+                      <td>{{completeData!==null? det.date.split('T')[0]:0}}</td>
+                      <td> &#x20B9;{{completeData!==null? det.opening.toFixed(0):0}}</td>
+                      <td> &#x20B9;{{completeData!==null? det.deposite.toFixed(0):0}}</td>
+                      <td> &#x20B9;{{completeData!==null? det.interest.toFixed(0):0}}</td>
+                      <td> &#x20B9;{{completeData!==null? det.closing.toFixed(0):0}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div> 
+      </div>
+</div>

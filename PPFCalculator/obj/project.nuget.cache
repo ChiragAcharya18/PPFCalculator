@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "aK+H4WbQlhbfa3SMqgIVGaAzQ/CvrNdIK3XouNFL9ZXVUBmjYgMXTLEqW1c1KQ5GIWA6CzZ/h30wG3le7ud35Q==",
+  "success": true,
+  "projectFilePath": "D:\\PPFCalculator\\PPFCalculator\\PPFCalculator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chirag.acharya\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\chirag.acharya\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\chirag.acharya\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\chirag.acharya\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\chirag.acharya\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\chirag.acharya\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
